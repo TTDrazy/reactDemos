@@ -13,7 +13,7 @@
 > 3. 深入 JSX （ [深入 JSX branch](https://github.com/TTDrazy/reactDemos/tree/%E6%B7%B1%E5%85%A5JSX)）
 >     - JSX 会编译为 React.createElement 调用形式
 >     - 可以使用点语法来引用一个 React 组件
->     - 用户定义的组件必须以大写字母开头，否则编译为原生的 html 标签。（如果你确实需要一个以小写字母开头的组件，则在 JSX 中使用它之前，必须将它赋值给一个大写字母开头的变量。）
+>     - 用户定义的组件必须以大写字母开头，否则编译为原生的 html 标签。（如果需要一个以小写字母开头的组件，则在使用之前，必须将它赋值给一个大写字母开头的变量）
 >     - props 默认值为 “true”
 >     - false , null , undefined , true 均不会被渲染（如果想渲染，可以将其转换为字符串）
 
