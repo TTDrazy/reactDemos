@@ -31,3 +31,10 @@
     transform: rotate(360deg);
   }
 }
+
+table thead,table tbody,table tr,table td{
+  text-align: center;
+}
+table td{
+  border:1px solid #000;
+}
