@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
-import {Button} from 'antd';
+import React, { Component } from "react";
+import Columns from "./Columns";
+import CoulumnsSecond from "./CoulumnsSecond";
 
 class Demo extends Component {
     render() {
         return (
-            <div>
-               <Button type="primary">这是一个Demo</Button> 
-            </div>
+            <table style={{ border: "1px solid #000" }}>
+                <tbody>
+                    <tr>
+                        <Columns />
+                    </tr>
+                    <tr>
+                        <CoulumnsSecond />
+                    </tr>
+                </tbody>
+            </table>
         );
     }
 }
