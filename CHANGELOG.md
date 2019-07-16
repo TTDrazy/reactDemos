@@ -5,12 +5,19 @@
 ---
 
 > 1. Refs 转发（ [Refs 转发 branch](https://github.com/TTDrazy/reactDemos/tree/Refs%E8%BD%AC%E5%8F%91)）
->     - 修正了 1.0.2 版本中的该分支下的实例问题，并增添了新的示例
->     - **注意：** 在 Refs 高阶组件的转发方式中，组件上不能直接出现属性 ref ，而应该以其他名称代替（否则只能取到组件而不是底层 DOM 节点）；只有在最底层的 DOM 节点时，才能直接出现属性 ref ！
+>     - 修正了 1.0.2 版本中的 Refs 转发 branch 下的实例问题，并增添了新的示例
+>     - **注意： 在 Refs 高阶组件的转发方式中，组件上不能直接出现属性 ref ，而应该以其他名称代替（否则只能取到组件而不是底层 DOM 节点）；只有在最底层的 DOM 节点时，才能直接出现属性 ref ！**
 >
-> 2. Refs 转发（ [Refs 转发 branch](https://github.com/TTDrazy/reactDemos/tree/Refs%E8%BD%AC%E5%8F%91)）
->     - 修正了 1.0.2 版本中的该分支下的实例问题，并增添了新的示例
->     - **注意：** 在 Refs 高阶组件的转发方式中，组件上不能直接出现属性 ref ，而应该以其他名称代替；只有在最底层的 DOM 节点时，才能直接出现属性 ref ！
+> 2. Ref & DOM（ [Ref 和 DOM branch](https://github.com/TTDrazy/reactDemos/tree/Refs%E8%BD%AC%E5%8F%91)）
+>     - Ref 是 React 中提供的访问 DOM 节点的一种方式
+>     - 适合使用 Ref 的情况：
+>       - 管理焦点，文本选择或媒体播放
+>       - 触发强制动画
+>       - 集成第三方 DOM 库
+>     - **避免使用 refs 来做任何可以通过声明式实现来完成的事情**
+>     - 使用 React.createRef() 来创建 Ref ;引用 DOM 节点时，在该 DOM 节点下 ref 的 current 属性中获取
+>     - 只有可以实例化的元素才可以 拥有 Ref，如 class 组件和 DOM 节点；而函数式组件则无法应用 Ref
+>     - 回调 Ref 也是创建 Ref 的一种方式，但不同于传递 React.createRef() 的创建方式，他能让你精确控制传递的时间点。该回调函数接收一个真实 DOM 并操作。
 
 ## 1.0.2(2019.7.15)
 
