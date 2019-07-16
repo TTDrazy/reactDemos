@@ -14,7 +14,6 @@ class Demo extends Component {
         }, 2000);
         console.log(this.myRef.current);//普通 => 证明已经转发，能够取到子组件的基本元素了
         console.log(this.HOCRef.current);//高阶 => 证明已经转发，能够取到子组件了
-        this.HOCRef.current.setInputValue('我是来自父组件里所设置的值！');
       }
     render() {
         

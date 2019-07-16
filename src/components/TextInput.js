@@ -2,17 +2,11 @@ import React, { Component } from "react";
 import HOCFunction from "./HOCComponent";
 
 class TextInput extends Component {
-    constructor(props) {
-        super(props);
-        this.textRef= React.createRef();
-    }
-    setInputValue(value) {
-        this.textRef.current.value = value;
-    }
     render() {
+        const{innerRef} = this.props;
         return (
             <div>
-                <input ref={this.textRef} style={{width:'300px'}}/>
+                <input ref={innerRef} style={{width:'300px'}}/>
             </div>
         );
     }
