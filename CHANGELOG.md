@@ -8,7 +8,7 @@
 >     - 修正了 1.0.2 版本中的 Refs 转发 branch 下的实例问题，并增添了新的示例
 >     - **注意： 在 Refs 高阶组件的转发方式中，组件上不能直接出现属性 ref ，而应该以其他名称代替（否则只能取到组件而不是底层 DOM 节点）；只有在最底层的 DOM 节点时，才能直接出现属性 ref ！**
 >
-> 2. Ref & DOM（ [Ref 和 DOM branch](https://github.com/TTDrazy/reactDemos/tree/Refs%E8%BD%AC%E5%8F%91)）
+> 2. Ref & DOM（ [Ref 和 DOM branch](https://github.com/TTDrazy/reactDemos/tree/Ref%E5%92%8CDOM)）
 >     - Ref 是 React 中提供的访问 DOM 节点的一种方式
 >     - 适合使用 Ref 的情况：
 >       - 管理焦点，文本选择或媒体播放
@@ -18,6 +18,29 @@
 >     - 使用 React.createRef() 来创建 Ref ;引用 DOM 节点时，在该 DOM 节点下 ref 的 current 属性中获取
 >     - 只有可以实例化的元素才可以 拥有 Ref，如 class 组件和 DOM 节点；而函数式组件则无法应用 Ref
 >     - 回调 Ref 也是创建 Ref 的一种方式，但不同于传递 React.createRef() 的创建方式，他能让你精确控制传递的时间点。该回调函数接收一个真实 DOM 并操作。
+> 3. Rreact 状态（ [Rreact 状态 branch](https://github.com/TTDrazy/reactDemos/tree/React%E7%8A%B6%E6%80%81)）
+>     - props 主要是为了能够将父组件中的属性或者方法传递给子组件
+>     - **所有的 React 组件都必须像纯函数一样使它们的 props 不被修改**
+>     - UI 界面渲染更新有两种方式：
+>       - 通过 ReactDOM.render() 来修改某个元素
+>       - 通过每个组件的状态 state 的改变来更新 UI 界面的渲染(每个组件的 state 都是彼此独立的)
+>     - 初始化 state 应该在构造函数中进行，更新 state 应该使用 setState() 来赋值
+>     - 当你调用 setState() 的时候，React 会将你提供的对象合并到当前的 state
+>     - React 生命周期
+>       - static getDerivedStateFromProps(nextProps, prevState) 
+>           - 组件实例化后和接受新属性时调用
+>       - componentWillMount() 
+>           - 组件装配前立刻调用，在render()之前
+>       - render()
+>           - 不改变组件状态，不与浏览器交互
+>       - componentDidMount() 
+>           - 组件装配后立刻调用
+>       - componentWillUpdate()
+>           - 组件接收到新属性或状态时，渲染前立刻调用
+>       - componentDidUpdate() 
+>           - 组件更新发生后立刻调用
+>       - componentWillUnmount() 
+>           - 组件被卸载和销毁之前立刻调用
 
 ## 1.0.2(2019.7.15)
 
