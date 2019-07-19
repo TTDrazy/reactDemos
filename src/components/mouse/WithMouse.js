@@ -7,8 +7,7 @@ function WithMouse(MyComponent) {
             console.log()
             return (
                 <Mouse
-                    render={mousePosition => (
-                        
+                    render={mousePosition => ( 
                         <MyComponent
                             {...this.props}
                             mousePosition={mousePosition}

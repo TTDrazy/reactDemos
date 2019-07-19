@@ -25,6 +25,7 @@ import WithMouse from "./WithMouse";
                     }}
                 />
                 {/* 子组件内可以根据传递过来的参数动态渲染，但是无法直接操纵父组件中传递的参数从而改变父组件的渲染 */}
+                {/* react 中数据是单向的，全部向下传递 */}
                 <button
                     onClick={this.handleClick}
                     style={{
