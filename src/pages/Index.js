@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Demo from '../components/Demo';
+import Calculator from '../components/Calculator';
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <Calculator></Calculator>
       </div>
     )
   }
