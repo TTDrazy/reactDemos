@@ -1,5 +1,32 @@
 # 更新日志
 
+## 1.0.6(2019.7.22)
+
+---
+
+> 1. 静态类型检查（ [静态类型检查 branch](https://github.com/TTDrazy/reactDemos/tree/%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5)）
+>     - 可以使用 Flow , Typescript , PropTypes（PropTypes 处于性能考虑，仅在开发模式下进行）等
+> 2. 列表 及 表单（ [列表及表单 branch](https://github.com/TTDrazy/reactDemos/tree/%E5%88%97%E8%A1%A8%E5%8F%8A%E8%A1%A8%E5%8D%95)）
+>     - 列表 & key
+>         - 是帮助 React 的 diff 算法的
+>         - **一般用于 map() 方法中的元素** ; 如果一个 map() 内嵌套层级过多，建议提取组件
+>     - 表单
+>         - 运用 state ,name,onChange 可以实现基本需求
+
+## 1.0.5(2019.7.19)
+
+---
+> 1. render props（ [renderProps branch](https://github.com/TTDrazy/reactDemos/tree/renderProps)）
+>     - render prop 是一个用于告知组件需要渲染什么内容的函数 prop
+>     - 在父组件里通过 this.props.render() 来确定向下传递需要的参数，在调用处的父组件里用 render()  方法来传入确定好的参数给子组件，即可实现子组件里根据参数动态渲染界面的功能
+>     - 使用 render prop 会抵消 React.pureComponent 的优势
+>
+> 2. Ref & DOM（ [Ref 和 DOM branch](https://github.com/TTDrazy/reactDemos/tree/Ref%E5%92%8CDOM)）
+>     - 修正了 1.0.3 版本中的Ref 和 DOM branch 下原始示例中函数在构造器中的错误声明方式
+
+
+
+
 ## 1.0.4(2019.7.17)
 
 ---
@@ -10,7 +37,7 @@
 >     - 绑定事件
 >         - 无参
 >            - 事件函数用箭头函数，能够直接保证 this 的指向
->            - 事件函数用普通函数 , 则需要 bind(this) 来传递 this 给函数，否则普通函数内部因为 this 指向问题报错
+>            - 用普通函数 , 则需要 bind(this) 来传递 this 给函数，否则普通函数内部因为 this 指向问题报错
 >         - 有参
 >            - 利用箭头函数传递所需参数 和 e
 >            - 利用.bind() 传递 this 和 所需参数
