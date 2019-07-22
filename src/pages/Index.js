@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import Demo from '../components/Demo';
+import List from '../components/List';
+import Form from '../components/Form';
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <List></List>
+        <Form></Form>
       </div>
     )
   }
