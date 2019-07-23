@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 const scaleName = {
-    c:'Celsius',
-    f:'Fahrenheit'
-}
-
+    c: "摄氏温度",
+    f: "华氏温度"
+};
 export default class TemperatureInput extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            temperature:''
-        }
+    handleChange = e => {
+        this.props.onTemperatureChange(e.target.value);
+    };
+    render() {
+        const { temperature, scale } = this.props;
+        return (
+            <form>
+                {/* 带边框的表单 */}
+                <fieldset>
+                    <legend>请输入{scaleName[scale]}的值：</legend>
+                    <input value={temperature} onChange={this.handleChange} />
+                </fieldset>
+            </form>
+        );
     }
-    handleChange = (e) => {
-        this.setState({
-            temperature:e.target.value
-        })
-    }
-  render() {
-    const {temperature} = this.state;
-    return (
-        <form>
-        {/* 带边框的表单 */}
-        <fieldset>
-            <legend>请输入摄氏度的温度：</legend>
-            <input value = {temperature} onChange = {this.handleChange}></input>
-        </fieldset>
-    </form>
-    )
-  }
 }
