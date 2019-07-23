@@ -1,5 +1,33 @@
 # 更新日志
 
+## 1.0.7(2019.7.23)
+
+---
+
+> 1. 状态提升 及 组合（ [状态提升及组合 branch](https://github.com/TTDrazy/reactDemos/tree/%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87%E5%8F%8A%E7%BB%84%E5%90%88)）
+>     - 状态提升
+>         - 在 React 中，将多个组件中各自独立的 state 共同向上移动至他们最近的一个父级组件中，实现共享 state ，这叫做状态提升
+>         - 虽然提升 state 的方式会比双向绑定写更多的‘样板代码’，但是由于数据是单向的，所以排除 bug 的时候可以定位到是哪个 props 出现了问题，并且直接定位到负责更新该 state 的组件，较为方便
+>     - 组合
+>         - 有些组件无法提前知道子组件的具体内容，可以用一个 props.children 为内容留空;这可以让其他组件通过 JSX 嵌套，将任意组件作为子组件传递给它们
+>         - **React 中只有 props 和 组合，并无继承**
+>
+> 2. 代码分割（ [代码分割 branch](https://github.com/TTDrazy/reactDemos/tree/%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2)）
+>     - 代码分割的最佳方式是通过动态 import() 语法
+>     - 在组件内和路由中，都可以通过 React.lazy() 和 Suspense 相结合的方式来动态加载组件
+>     - React.lazy 目前只支持默认导出（default exports），如果你需要导入命名导出的组件，可以将原本命名导出的组件通过中间模块导出为默认模块，再由 React.lazy() 导入
+> 3. 协调（ [协调 branch](https://github.com/TTDrazy/reactDemos/tree/%E5%8D%8F%E8%B0%83)）
+>     - Diffing算法
+>         - 当对比两棵树时， React 会先比较根节点
+>         - 当对比两个相同节点时， React 只对比有变化的属性
+>         - 在子元素列表末尾新增元素的话，性能会更好
+>         - React 使用 key 来使用匹配原有树上及新树上的子元素，key 尽量不要使用不稳定的值（例如 Math.random()）,否则会导致不必要的组件和 DOM 元素被创建
+> 4. 非受控组件（ [非受控组件 branch](https://github.com/TTDrazy/reactDemos/tree/%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6)）
+>     - 受控组件与非受控组件的区别是：组件内是否有自己的 state
+>     - 表单数据一般应用受控组件的方式来进行处理（非受控组件的话可以用 Ref 结合来实现）
+>     - 赋予组件初始值时，可以使用 defaultValue 来赋值
+>     - 在 React 中，<input type='file'/> 始终是一个非受控组件，其可以用 Ref 来进行控制 
+
 ## 1.0.6(2019.7.22)
 
 ---
@@ -8,10 +36,11 @@
 >     - 可以使用 Flow , Typescript , PropTypes（PropTypes 处于性能考虑，仅在开发模式下进行）等
 > 2. 列表 及 表单（ [列表及表单 branch](https://github.com/TTDrazy/reactDemos/tree/%E5%88%97%E8%A1%A8%E5%8F%8A%E8%A1%A8%E5%8D%95)）
 >     - 列表 & key
->         - 是帮助 React 的 diff 算法的
->         - **一般用于 map() 方法中的元素** ; 如果一个 map() 内嵌套层级过多，建议提取组件
+>         - key 是帮助 React 的 diff 算法的
+>         - **key 一般用于 map() 方法中的元素** ; 如果一个 map() 内嵌套层级过多，建议提取组件
 >     - 表单
 >         - 运用 state ,name,onChange 可以实现基本需求
+
 
 ## 1.0.5(2019.7.19)
 
