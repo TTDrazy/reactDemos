@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Demo from '../components/Demo';
+import Control from '../components/Control';
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <Control></Control>
       </div>
     )
   }
