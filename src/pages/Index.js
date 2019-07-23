@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Demo from '../components/Demo';
+import Diffing from '../components/Diffing';
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <Diffing></Diffing>
       </div>
     )
   }
