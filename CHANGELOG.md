@@ -1,5 +1,21 @@
 # 更新日志
 
+## 1.0.8(2019.7.24)
+
+---
+
+> 1. Context（ [Context branch](https://github.com/TTDrazy/reactDemos/tree/Context)）
+>     - Context 是为了在全局使用某个数据（而不必显式的应用 porps 来进行逐层传递），如：语言，主题等
+>     - 使用方式：
+>         1. 利用 React.creatContext(defaultValue) 创建一个 Context
+>         2. 利用 Context.Provider 将值传递给 Context.Consumer
+>         3. 利用 Context.Consumer 中的函数拿到 Context.Provider 传递下来的值并完成渲染
+>     - 使用时注意事项：
+>         - Context.Provider 传值时只能传一个
+>         - Context.Consumer 中只能接收一个函数，多余的内容会报 render() not a function 的错误
+>     - Context 会使组建的复用性变差，**如果只是想避免层层嵌套传递属性，组件组合会比 Context 更好**
+>     - 可以把 Context.Provider 内传递的值放在 state 内；这样的话，当每一次 Context.Provider 重新渲染时，Context.Consumer 内的组件也会更新
+
 ## 1.0.7(2019.7.23)
 
 ---
