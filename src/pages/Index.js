@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import Demo from '../components/Demo';
+import AjaxDemo from '../ajaxExample/AjaxDemo';
+import FunDemo from '../functionExample/FunDemo';
+import StateDemo from '../stateExample/StateDemo';
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <AjaxDemo></AjaxDemo>
+        <FunDemo></FunDemo>
+        <StateDemo></StateDemo>
       </div>
     )
   }
