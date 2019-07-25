@@ -1,5 +1,50 @@
 # 更新日志
 
+## 1.0.9(2019.7.25)
+
+---
+
+> 1. FAQ（ [FAQ branch](https://github.com/TTDrazy/reactDemos/tree/FAQ)）
+>     - AJAX 及 APIs
+>         - 借助 AJAX 库，比如： Axios , JQuery AJAX ......
+>         - 在 React 中，建议在 componentDidMount() 中发起 AJAX 请求。这样可以让拿到 AJAX 返回的数据并通过 setState() 来更新组件
+>     - Bable, JSX 及 构建过程
+>         - 在 React 中，可以不使用 JSX 和 ES6(+)；但不建议这样去做
+>         - JSX 中的注释就是在{/* ...... */} 中去书写
+>     - 在组件中使用事件处理函数
+>         - 为函数绑定组件实例（无参）有四种方式
+>            1. 在 constructor() 中利用 bind(this) 来绑定
+>            2. （ ❤  推荐）函数利用箭头函数实现，在 DOM 节点上直接绑定
+>            3. 在 DOM 节点上利用 bind(this) 来进行绑定
+>            4. 在 DOM 节点上利用 箭头函数 来进行绑定
+>            - 注意：第一种方式会让 constructor() 内过于繁杂，第三种和第四种会在组件的每次渲染时都创建新的函数，影响性能；因此推荐第二种 
+>         - 为函数绑定组件实例（有参）有两种方式：
+>            1. 通过箭头函数传参
+>            2. 通过 data-attributes 传递参数（需要优化大量元素或使用依赖于  React.PureComponent 相等性检查的渲染树时使用）
+>         - 阻止函数被调用太快或太多次有三种方式
+>            1. 节流：基于时间的频率来进行抽样更改（利用 throttle()）
+>            2. 防抖：一段时间的不活动之后发布更改（利用 debounce()）
+>            3. requestAnimationFrame 节流：基于 requestAnimationFrame 的抽样更改（利用 rafSchedule ）
+>     - 组件状态
+>         - props 和 state 的区别
+>            - props 是传递给组件的（类似于函数的形参），而 state 是在组件内被组件自己管理的（类似于在一个函数内声明的变量）
+>         - 如果更新的 state 属性 又依赖于 state 
+>            - 可以使用 setState()  的回调函数进行更新；也可以将 state 属性提取出来后经过处理再通过 setState() 直接更新  
+>         - 在项目并不是很复杂的情况下，可以选择不用 Redux 或 Mobx 这样的 state 管理库
+>     - 样式与 CSS
+>         - 在 React 中，建议引用 className + 导入css文件来设置样式，而不是利用行内样式设置
+>         - 在 React 中，可以使用 react-transition-group 和 react-motion 等库来实现动画
+>     - 项目文章结构
+>         - 按功能或路由组织（功能的定义因人而异）
+>         - 按文件类型组织
+>         - 注意事项
+>            - 避免多层嵌套。尽量将单个项目中的目录嵌套层级控制在 3-4 个以内
+>            - 不要过多思考。可以随着项目的进行再按需进行目录的结构调整
+>     - Virtual DOM 及内核
+>         - Virtual DOM 则是一种由 JS 类库基于浏览器 API 实现的概念
+>         - 在这个概念中， UI 以一种“虚拟的”表现形式被存储于内存中，并且通过像 ReactDOM 等的类库能够使它与“真实的” DOM 进行同步，这一过程叫做协调
+
+
 ## 1.0.8(2019.7.24)
 
 ---
