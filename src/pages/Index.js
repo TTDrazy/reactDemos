@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Demo from '../components/Demo';
+import Count from '../components/stateHock/Count';
 
 export default class Index extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <Count></Count>
       </div>
     )
   }
