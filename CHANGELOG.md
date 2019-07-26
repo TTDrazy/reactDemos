@@ -1,5 +1,26 @@
 # 更新日志
 
+## 1.1.0(2019.7.26)
+
+---
+
+> 1. Hook（ [Hook branch](https://github.com/TTDrazy/reactDemos/tree/Hook)）
+>     - Hook 简介
+>         - Hook 是 React 16.8 之后的新增特性，能够让你在非 class 的组件内在函数组件里“钩入” state 及生命周期等特性的函数
+>         - 之前的 React 使用中，很多情况下会将关联性不强的很多逻辑放在一个方法中进行组合，这会容易出现  bug ,并且导致逻辑不一致。为了解决这个问题，Hook 将组件中相互关联的部分拆分成更小的函数
+>     - Hook 使用规则
+>         - 只能在函数最外层调用。不要在循环，条件判断或子函数中调用
+>         - 只能在 React 函数组件以及自定义 Hook 中去调用
+>         - 可以利用 eslint-plugin-react-hooks 插件来帮助我们自动执行这些规则
+>     - State Hook
+>         - 使用步骤
+>            1. 引入 React 中的 useState 的 Hook
+>            2. 直接在组件中调用 useState Hook。useState 声明了一个新的 state 变量，并返回一对值给到我们命名的变量上；第一个值为 state 变量，第二个值为更新 state 的函数; useState() 方法中设置的值为 state 的默认值
+>            3. 在 DOM 节点上绑定 state 及更新 state 的函数
+>         - 一般将 state 变量声明为一对 [something,setSomething] 较为规范
+>         - 可以同时使用多个 state 变量（尽可能把他们拆分的细化会有利于后期代码的拆分）
+
+
 ## 1.0.9(2019.7.25)
 
 ---
