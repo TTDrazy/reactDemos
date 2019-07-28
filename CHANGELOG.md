@@ -1,5 +1,19 @@
 # 更新日志
 
+## 1.1.1(2019.7.28)
+
+---
+
+> 1. Hook（ [Hook branch](https://github.com/TTDrazy/reactDemos/tree/Hook)）
+>     - 继续更新补充了 1.1.0 版本中 Hook 中的内容,内容如下：
+>     - Effect Hook
+>         - 可以将 effect Hook 视为 componentDidMount + componentDidUpdate  + componentWillUnmount 这三个函数的组合
+>         - 使用步骤
+>            1. 引入 React 中的 useEffect 的 Hook
+>            2. 直接在组件中调用 useEffect Hook。回调函数为 componentDidMount + componentDidUpdate 的组合。return 的函数为 componentWillUnmount 。 useEffect 的第二个可选参数为数组，如果数组中的值在先后两次渲染之间没有发生变化，可以跳过对 effect Hook 的调用，从而避免重复调用 effect Hook
+>         - effect Hook 可以按照自己代码的业务逻辑去将它们彼此分离，而不是在同一个生命周期函数里去完成众多关联性不强的业务逻辑
+
+
 ## 1.1.0(2019.7.26)
 
 ---
