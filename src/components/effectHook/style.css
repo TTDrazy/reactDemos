@@ -1,0 +1,5 @@
+.myTable tr td {
+    text-align: center;
+    border: 1px solid pink;
+    padding:5px;
+}
