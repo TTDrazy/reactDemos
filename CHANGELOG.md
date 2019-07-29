@@ -1,11 +1,33 @@
 # 更新日志
 
+## 1.1.2(2019.7.29)
+
+---
+
+> 1. Hook（ [Hook branch](https://github.com/TTDrazy/reactDemos/tree/Hook)）
+>     - 继续更新补充了 1.1.0 版本中 Hook 中的内容
+>     - 自定义 Hook
+>         - 通过使用各种 Hook 的组合，将共同的业务逻辑抽离出来并返回所需结果的一种函数
+>         - 名称必须以 'use' 开头（为了让 React 在自定义 Hook 的内部中自动进行规则检查），自定义 Hook 的内部可以自由调用其他 Hook
+>         - 在两个组件中使用相同的 Hook 不会共享 state，它们是相互完全隔离的
+>     - Context Hook
+>         - useContext() 接收一个由React.createContext() 创建的 context 对象
+>         - useContext(MyContext) 相当于 class 组件中的 static contextType = MyContext 或者 <MyContext.Consumer>
+>         - useContext(MyContext) 只是让你能够读取 context 的值以及订阅 其变化（你仍然需要在上层组件树中使用 < MyContext.Provider > 来为下层组件提供 context）
+>     - Callback Hook 和 Momo Hook
+>         -  useCallback() 和 useMemo() 的参数跟 useEffect() 一致，他们之间最大的区别是 useEffect() 可以处理数据获取、订阅或者手动修改过 DOM 等，而前两个则不可以
+>         - 比较
+>            - useMemo() 和 useCallback() 都会在组件第一次渲染的时执行，然后会在其依赖的变量发生改变时再次执行；并且这两个hooks都返回缓存的值
+>            - useMemo() 返回缓存的变量，而 useCallback() 返回缓存的函数
+>         - useEffect() 、useMemo() 、useCallback() 都是自带闭包的,因此每一次组件的渲染都会捕获最新的上下文中的状态 (state,props) ，从而无法捕获上一次的状态（如果需要捕获，可以使用 ref 来访问）
+
+
 ## 1.1.1(2019.7.28)
 
 ---
 
 > 1. Hook（ [Hook branch](https://github.com/TTDrazy/reactDemos/tree/Hook)）
->     - 继续更新补充了 1.1.0 版本中 Hook 中的内容,内容如下：
+>     - 继续更新补充了 1.1.0 版本中 Hook 中的内容
 >     - Effect Hook
 >         - 可以将 effect Hook 视为 componentDidMount + componentDidUpdate  + componentWillUnmount 这三个函数的组合
 >         - 使用步骤
@@ -29,7 +51,7 @@
 >     - State Hook
 >         - 使用步骤
 >            1. 引入 React 中的 useState 的 Hook
->            2. 直接在组件中调用 useState Hook。useState 声明了一个新的 state 变量，并返回一对值给到我们命名的变量上；第一个值为 state 变量，第二个值为更新 state 的函数; useState() 方法中设置的值为 state 的默认值
+>            2. 直接在组件中调用 useState Hook。useState 声明了一个新的 state 变量，并返回一对值给到我们命名的变量上；第一个值为 state 变量，第二个值为更新 state 的函数; useState() 方法中设置的值为 state 的默认值（可以为值或者函数）
 >            3. 在 DOM 节点上绑定 state 及更新 state 的函数
 >         - 一般将 state 变量声明为一对 [something,setSomething] 较为规范
 >         - 可以同时使用多个 state 变量（尽可能把他们拆分的细化会有利于后期代码的拆分）
