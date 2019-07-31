@@ -1,5 +1,14 @@
 # 更新日志
 
+## 1.1.3(2019.7.31)
+
+---
+
+> 1. Hook（ [Hook branch](https://github.com/TTDrazy/reactDemos/tree/Hook)）
+>     - 继续更新补充了 1.1.0 版本中 Hook 中的内容
+>         - 补充了关于 Context Hook , 自定义 Hook 等的更多案例
+
+
 ## 1.1.2(2019.7.29)
 
 ---
@@ -12,7 +21,7 @@
 >         - 在两个组件中使用相同的 Hook 不会共享 state，它们是相互完全隔离的
 >     - Context Hook
 >         - useContext() 接收一个由React.createContext() 创建的 context 对象
->         - useContext(MyContext) 相当于 class 组件中的 static contextType = MyContext 或者 <MyContext.Consumer>
+>         - useContext(MyContext) 相当于 class 组件中的 static contextType = MyContext 或者 < MyContext.Consumer >
 >         - useContext(MyContext) 只是让你能够读取 context 的值以及订阅 其变化（你仍然需要在上层组件树中使用 < MyContext.Provider > 来为下层组件提供 context）
 >     - Callback Hook 和 Momo Hook
 >         -  useCallback() 和 useMemo() 的参数跟 useEffect() 一致，他们之间最大的区别是 useEffect() 可以处理数据获取、订阅或者手动修改过 DOM 等，而前两个则不可以
