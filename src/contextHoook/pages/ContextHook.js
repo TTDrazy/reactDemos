@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import LanuageContext from "../context/LanguageContext";
 import StyleContext from "../context/StyleContext";
-import ContextExample from "../components/ContextExample";
-import THEME from "../components/context/constants/theme";
-import Language from "../components/context/local/index";
+import ContextExample from '../ContextExample'
+import THEME from "../constants/theme";
+import Language from "../local/index";
 
-export default class Index extends Component {
+export default class ContextHook extends Component {
     constructor(props) {
         super(props);
         this.state = {
