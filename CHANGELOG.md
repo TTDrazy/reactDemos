@@ -1,5 +1,21 @@
 # 更新日志
 
+## 1.1.4(2019.8.1)
+
+---
+
+> 1. Hook（ [Hook branch](https://github.com/TTDrazy/reactDemos/tree/Hook)）
+>     - 继续更新补充了 1.1.0 版本中 Hook 中的内容
+>     - Hook FAQ
+>         - 一种类似实例变量的东西
+>            - useRef() 不仅可以用于 DOM Refs，Ref 对象是一个 current 属性可变且可以容纳任何值的通用容器，类似于一个 class 实例属性（例如，清除定时器中可使用）
+>            - 一般应该在事件处理和 effects 中修改 refs（尽量避免在渲染期间设置 refs， 除非做“懒加载”）
+>         - 推荐将 state 切分为多个 state
+>
+> 2. 性能优化
+>     - 当组件中仅有某个数值变化才需要引起界面改变的时候，可以采用 shouldComponentUpdate() 来进行检查
+
+
 ## 1.1.3(2019.7.31)
 
 ---
