@@ -10,6 +10,7 @@
   height: 40px;
   margin:13px;
   color:#fff;
+  background: pink;
   font-size: 20px;
   display: flex;
 }
@@ -25,3 +26,8 @@
   margin:0 0 0 10px;
   vertical-align: middle
 }
+
+ ul.ant-menu.ant-menu-light.ant-menu-root.ant-menu-horizontal{
+  margin-left: 67%;
+  background-color: #e6f7ff;
+} 

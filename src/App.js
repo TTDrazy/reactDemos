@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Index from "./pages/Index";
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
-import Logo from "./logo.js";
+import Logo from "./Logo.js";
+import { Link } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -25,6 +25,7 @@ class App extends Component {
                 style={{ minHeight: "100vh" }}
             >
                 <Sider
+                    theme="light"
                     collapsible
                     collapsed={this.state.collapsed}
                     onCollapse={this.onCollapse}
@@ -34,7 +35,7 @@ class App extends Component {
                         <span className="logo-text">React demos</span>
                     </div>
                     <Menu
-                        theme="dark"
+                        theme="light"
                         defaultSelectedKeys={["1"]}
                         mode="inline"
                     >
@@ -49,15 +50,16 @@ class App extends Component {
                         <SubMenu
                             key="sub1"
                             title={
-                                <span>
-                                    <Icon type="user" />
-                                    <span>User</span>
-                                </span>
+                                <Link to="/Hook">
+                                    <span>
+                                        <Icon type="user" />
+                                        <span>Hook</span>
+                                    </span>
+                                </Link>
                             }
                         >
-                            <Menu.Item key="3">Tom</Menu.Item>
-                            <Menu.Item key="4">Bill</Menu.Item>
-                            <Menu.Item key="5">Alex</Menu.Item>
+                            <Menu.Item key="3"><Link to="/Hook/todoList">todoList</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/Hook/changeTheme">changeTheme</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu
                             key="sub2"
@@ -77,27 +79,37 @@ class App extends Component {
                         </Menu.Item>
                     </Menu>
                 </Sider>
-                <Layout style={{ paddingLeft: "1%" }}>
-                    <Layout>
-                        <Header
-                            style={{
-                                position: "fixed",
-                                zIndex: 1,
-                                width: "100%"
-                            }}
+                <Layout>
+                    <Header
+                        style={{
+                            position: "fixed",
+                            zIndex: 1,
+                            width: "100%",
+                            backgroundColor: "#e6f7ff"
+                        }}
+                    >
+                        <Menu
+                            theme="light"
+                            mode="horizontal"
+                            style={{ lineHeight: "63.5px" }}
                         >
-                            <Menu
-                                theme="light"
-                                mode="horizontal"
-                                defaultSelectedKeys={["2"]}
-                                style={{ lineHeight: "64px" }}
-                            >
-                                <Menu.Item key="1">nav 1</Menu.Item>
-                                <Menu.Item key="2">nav 2</Menu.Item>
-                                <Menu.Item key="3">nav 3</Menu.Item>
-                            </Menu>
-                        </Header>
-                    </Layout>
+                            <Menu.Item key="1">
+                                <Logo.search />
+                            </Menu.Item>
+                            <Menu.Item key="2">
+                                <Logo.document />
+                            </Menu.Item>
+                            <Menu.Item key="3">
+                                <Logo.message />
+                            </Menu.Item>
+                            <Menu.Item key="4">
+                                <Logo.account />
+                            </Menu.Item>
+                            <Menu.Item key="5">
+                                <Logo.theme />
+                            </Menu.Item>
+                        </Menu>
+                    </Header>
                     <Content>
                         <Breadcrumb style={{ margin: "16px 0" }}>
                             <Breadcrumb.Item>User</Breadcrumb.Item>
@@ -110,7 +122,7 @@ class App extends Component {
                                 minHeight: 360
                             }}
                         >
-                            Bill is a cat.
+                            {this.props.children}
                         </div>
                     </Content>
                     <Footer style={{ textAlign: "center" }}>Drazy 2019</Footer>
